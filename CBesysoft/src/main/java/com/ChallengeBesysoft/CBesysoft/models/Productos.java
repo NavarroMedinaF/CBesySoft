@@ -5,9 +5,9 @@ package com.ChallengeBesysoft.CBesysoft.models;
 public class Productos {
 
     private long codigo;
-    private String nombre;
+    private String nombre,categoria;
     private double precio;
-    private String categoria;
+
 
 
 

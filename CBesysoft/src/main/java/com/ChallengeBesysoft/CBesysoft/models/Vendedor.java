@@ -11,8 +11,7 @@ public class Vendedor {
 
     private long codigo;
     private String nombre;
-    private double sueldo;
-    private double comision;
+    private double sueldo, comision;
 
 
     /*CONTRUCTOR*/
