@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/CBesySoft.iml" filepath="$PROJECT_DIR$/.idea/CBesySoft.iml" />
+      <module fileurl="file://$PROJECT_DIR$/CBesysoft/CBesysoft.iml" filepath="$PROJECT_DIR$/CBesysoft/CBesysoft.iml" />
+    </modules>
+  </component>
+</project>

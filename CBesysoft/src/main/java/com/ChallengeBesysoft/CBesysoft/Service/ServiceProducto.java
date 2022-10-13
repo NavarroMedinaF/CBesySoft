@@ -6,6 +6,7 @@ import com.ChallengeBesysoft.CBesysoft.models.Productos;
 import java.util.List;
 import java.util.Objects;
 import java.util.Scanner;
+import java.util.stream.Collectors;
 
 public class ServiceProducto {
 
@@ -42,9 +43,14 @@ public class ServiceProducto {
         return listaDeProductos.stream().filter(productos -> productos.getCodigo()==codigo).findAny().orElse(null);
     }
 
-    public Productos buscarProductoCategoria(String categoria,List<Productos> listaDeProductos){
-        return listaDeProductos.stream().filter(productos -> Objects.equals(productos.getCategoria(), categoria.toLowerCase())).findAny().orElse(null);
+
+    public List<Productos> buscarTodosLosProductosCategoria(String categoria, List<Productos> listaDeProductos){
+        return listaDeProductos.stream().filter(productos -> Objects.equals(productos.getCategoria(), categoria.toLowerCase())).collect(Collectors.toList());
     }
-
-
+    public List<Productos> buscarTodosLosProductosPrecioMayor(double precio, List<Productos> listaDeProductos){
+        return listaDeProductos.stream().filter(productos -> productos.getPrecio()>precio ).collect(Collectors.toList());
+    }
+    public List<Productos> buscarTodosLosProductosPrecioMenor(double precio, List<Productos> listaDeProductos){
+        return listaDeProductos.stream().filter(productos -> productos.getPrecio()<precio ).collect(Collectors.toList());
+    }
 }

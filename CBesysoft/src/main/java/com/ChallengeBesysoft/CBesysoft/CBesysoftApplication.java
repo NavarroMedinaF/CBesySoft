@@ -50,11 +50,19 @@ public class CBesysoftApplication implements CommandLineRunner {
 
 		Productos producto1= new Productos(1,"Chevrollet S10 3.8l", 1500000, "camioneta");
 		listaDeProductos.add(producto1);
-		Productos producto2= new Productos(1,"Scannia 100 5l", 15000000, "camion");
+		Productos producto2= new Productos(2,"Scannia 100 5l", 15000000, "camion");
 		listaDeProductos.add(producto2);
-		Productos producto3= new Productos(1,"Fiat uno 1.5l", 150000, "automotor");
+		Productos producto3= new Productos(3,"Fiat uno 1.5l", 150000, "automovil");
 		listaDeProductos.add(producto3);
-		Productos producto4= new Productos(1,"Yamaha Slash 1l", 190000, "motocicleta");
+		Productos producto4= new Productos(4,"Yamaha Slash 1l", 198700, "motocicleta");
+		listaDeProductos.add(producto4);
+		Productos producto5= new Productos(5,"Ford f100 3.8l", 1597000, "camioneta");
+		listaDeProductos.add(producto1);
+		Productos producto6= new Productos(6,"Volvo React 5l", 215400000, "camion");
+		listaDeProductos.add(producto2);
+		Productos producto7= new Productos(7,"Audi R8 1.5l", 163000000, "automovil");
+		listaDeProductos.add(producto3);
+		Productos producto8= new Productos(8,"Rouser Ventis 1l", 254600, "motocicleta");
 		listaDeProductos.add(producto4);
 
 
@@ -84,7 +92,7 @@ public class CBesysoftApplication implements CommandLineRunner {
 
 			case 4:
 				System.out.println("Ingrese la categoria del producto");
-				System.out.println(sp.buscarProductoCategoria(leer.next(), listaDeProductos ));
+				System.out.println(sp.buscarTodosLosProductosCategoria(leer.nextLine(), listaDeProductos ));
 				bandera=spc.deseaContinuar(false);
 				break;
 
@@ -103,7 +111,16 @@ public class CBesysoftApplication implements CommandLineRunner {
 				sv.calcularComision( listaDeVendedor);
 				bandera=spc.deseaContinuar(false);
 				break;
-
+			case 8:
+				System.out.println("Ingrese el valor por el q desea filtrar");
+				System.out.println(sp.buscarTodosLosProductosPrecioMayor(leer.nextDouble(),listaDeProductos));
+				bandera=spc.deseaContinuar(false);
+				break;
+			case 9:
+				System.out.println("Ingrese el valor por el q desea filtrar");
+				System.out.println(sp.buscarTodosLosProductosPrecioMenor(leer.nextDouble(),listaDeProductos));
+				bandera=spc.deseaContinuar(false);
+				break;
 		}
 		}while(!bandera);
 	}
